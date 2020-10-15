@@ -19,6 +19,6 @@
    background-size: cover;
    transition: box-shadow 0.2s;
    background-repeat: no-repeat;
-   background-image: url(./logo.png);
    box-shadow: 0 0 1px 1px #0000001a;
+   background-image: url(../img/logo.png);
 }

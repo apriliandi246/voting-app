@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Vote() {
    return (
       <div className="vote cf">
-         <a href="#" className="vote__title">
+         <Link to="/vote/246" className="vote__title">
             sophie
-         </a>
+         </Link>
 
          <div className="vote__description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente

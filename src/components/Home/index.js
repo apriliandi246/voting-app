@@ -2,7 +2,7 @@ import React from "react";
 import Votes from "../Votes";
 import Header from "../Header";
 import Navbar from "../Navbar";
-import "./style.css";
+import "./css/style.css";
 
 export default function Home() {
    return (

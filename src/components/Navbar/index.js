@@ -1,10 +1,11 @@
 import React from "react";
-import "./style.css";
+import { Link } from "react-router-dom";
+import "./css/style.css";
 
 export default function Navbar() {
    return (
       <nav className="navbar">
-         <a href="" className="navbar__brand"></a>
+         <Link to="/" className="navbar__brand"></Link>
       </nav>
    );
 }
