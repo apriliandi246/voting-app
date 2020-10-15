@@ -1,6 +1,6 @@
 .container {
    width: 91%;
-   margin: 115px auto 2px auto;
+   margin: 115px auto 40px auto;
 }
 
 .header {
@@ -23,7 +23,7 @@
 .header__link {
    width: 100%;
    border: none;
-   padding: 15px;
+   padding: 18px;
    color: #000000;
    margin-top: 15px;
    font-size: 1.2rem;
@@ -58,7 +58,9 @@
 
 .vote__title {
    color: #000000;
-   font-size: 1.4rem;
+   font-size: 1.2rem;
+   font-weight: bold;
+   line-height: 27px;
    letter-spacing: 1px;
    text-decoration: none;
    font-family: monospace;
@@ -71,7 +73,7 @@
 
 .vote__description {
    font-size: 1rem;
-   margin-top: 28px;
+   margin-top: 23px;
    line-height: 23px;
    margin-bottom: 28px;
    white-space: pre-line;
@@ -112,6 +114,6 @@
 
 @media screen and (min-width: 1650px) {
    .container {
-      width: 28%;
+      width: 30%;
    }
 }

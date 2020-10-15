@@ -5,13 +5,12 @@ export default function Vote() {
    return (
       <div className="vote cf">
          <Link to="/vote/246" className="vote__title">
-            sophie
+            Send the picture, Dude... Send the picture, Dude...
          </Link>
 
          <div className="vote__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            quo quod eum, at et sit modi in eaque, officiis consequatur vel
-            voluptatibus.
+            This voting was made so that Ahlon would send photos of his boobs to
+            Ibnu....
          </div>
 
          <div className="vote__footer">2 days ago</div>

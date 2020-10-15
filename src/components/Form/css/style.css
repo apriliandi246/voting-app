@@ -1,0 +1,101 @@
+.form-container {
+   width: 91%;
+   margin: 115px auto 50px auto;
+}
+
+.input-form {
+   margin-top: 38px;
+}
+
+.input-form__label {
+   color: #000000;
+   font-size: 1.1rem;
+   font-family: monospace;
+}
+
+textarea {
+   white-space: pre-line;
+}
+
+.input-form__input {
+   width: 100%;
+   border: none;
+   padding: 12px;
+   outline: none;
+   display: block;
+   color: #000000;
+   margin-top: 15px;
+   font-size: 1.1rem;
+   box-sizing: border-box;
+   background-color: #fafafa;
+   transition: background-color 0.2s;
+   box-shadow: 0 0 1px 1px #0000001a;
+}
+
+.button-form {
+   width: 100%;
+   border: none;
+   outline: none;
+   padding: 14px;
+   color: #000000;
+   cursor: pointer;
+   margin-top: 38px;
+   font-size: 1.1rem;
+   margin-bottom: 10px;
+   letter-spacing: 1px;
+   font-family: monospace;
+   box-sizing: border-box;
+   background-color: #fafafa;
+   box-shadow: 0 0 1px 1px #0000001a;
+   transition: color 0.2s, background-color 0.2s;
+}
+
+.line-space-button {
+   border: 1px solid #dfdfdf;
+}
+
+.input-form__input:focus {
+   background-color: #f7efef;
+}
+
+.input-form__input::placeholder {
+   font-family: monospace;
+}
+
+.button-form:hover {
+   background-color: #f7efef;
+}
+
+@media screen and (min-width: 650px) {
+   .form-container {
+      width: 78%;
+   }
+}
+
+@media screen and (min-width: 880px) {
+   .form-container {
+      width: 60%;
+   }
+
+   textarea {
+      resize: none;
+   }
+}
+
+@media screen and (min-width: 1140px) {
+   .form-container {
+      width: 50%;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   .form-container {
+      width: 37%;
+   }
+}
+
+@media screen and (min-width: 1700px) {
+   .form-container {
+      width: 32%;
+   }
+}
