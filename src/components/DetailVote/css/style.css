@@ -1,0 +1,120 @@
+.vote-container {
+   width: 91%;
+   margin: 115px auto 50px auto;
+}
+
+.vote-title {
+   line-height: 31px;
+   font-size: 1.7rem;
+   font-weight: bolder;
+   font-family: monospace;
+}
+
+.vote-description {
+   margin-top: 36px;
+   font-size: 1.1rem;
+   line-height: 27px;
+   font-family: Ubuntu;
+   margin-bottom: 50px;
+   letter-spacing: 1px;
+   white-space: pre-line;
+}
+
+.object-1,
+.object-2 {
+   padding: 6px;
+   box-sizing: border-box;
+}
+
+.object-2 {
+   margin-top: 36px;
+}
+
+.title-object {
+   line-height: 29px;
+   font-size: 1.3rem;
+   margin-bottom: 13px;
+   font-family: monospace;
+}
+
+.total-votes {
+   font-size: 1.1rem;
+   font-family: monospace;
+}
+
+progress {
+   width: 100%;
+   padding: 19px;
+   display: block;
+   margin-top: 8px;
+   margin-bottom: 13px;
+}
+
+.btn-vote {
+   border: none;
+   outline: none;
+   padding: 10px;
+   color: #000000;
+   cursor: pointer;
+   font-size: 1.1rem;
+   margin-bottom: 10px;
+   font-family: monospace;
+   box-sizing: border-box;
+   background-color: #fafafa;
+   box-shadow: 0 0 1px 1px #0000001a;
+   transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-vote:hover {
+   background-color: #f7efef;
+}
+
+@media screen and (min-width: 680px) {
+   .vote-container {
+      width: 83%;
+   }
+}
+
+@media screen and (min-width: 800px) {
+   .vote-container {
+      width: 67%;
+   }
+
+   .vote-title {
+      line-height: 35px;
+   }
+
+   .vote-description {
+      margin-top: 34px;
+   }
+}
+
+@media screen and (min-width: 1020px) {
+   .vote-container {
+      width: 55%;
+   }
+}
+
+@media screen and (min-width: 1230px) {
+   .vote-container {
+      width: 46%;
+   }
+}
+
+@media screen and (min-width: 1330px) {
+   .vote-container {
+      width: 41%;
+   }
+}
+
+@media screen and (min-width: 1470px) {
+   .vote-container {
+      width: 36%;
+   }
+}
+
+@media screen and (min-width: 1700px) {
+   .vote-container {
+      width: 30%;
+   }
+}
