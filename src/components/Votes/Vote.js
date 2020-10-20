@@ -1,19 +1,19 @@
 import React from "react";
+import { Time } from "../../util/time";
 import { Link } from "react-router-dom";
 
-export default function Vote() {
+export default function Vote({ vote }) {
    return (
       <div className="vote cf">
-         <Link to="/vote/246" className="vote__title">
-            Send the picture, Dude... Send the picture, Dude...
+         <Link to={`/vote/${vote._id}`} className="vote__title">
+            {vote.title}
          </Link>
 
-         <div className="vote__description">
-            This voting was made so that Ahlon would send photos of his boobs to
-            Ibnu....
-         </div>
+         <div className="vote__description">{vote.description}</div>
 
-         <div className="vote__footer">2 days ago</div>
+         <div className="vote__footer">
+            {new Time(vote.createdAt).format("medium")}
+         </div>
       </div>
    );
 }
