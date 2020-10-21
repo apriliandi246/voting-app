@@ -61,7 +61,16 @@ export default function DetailVote({ match }) {
                      value={vote.object1.totalVotes}
                      max={vote.maximumVote}
                   ></progress>
-                  <button onClick={() => objVoted("obj1")} className="btn-vote">
+                  <button
+                     style={{
+                        display:
+                           vote.object1.totalVotes === vote.maximumVote
+                              ? "none"
+                              : null,
+                     }}
+                     onClick={() => objVoted("obj1")}
+                     className="btn-vote"
+                  >
                      Voting
                   </button>
                </div>
@@ -73,7 +82,16 @@ export default function DetailVote({ match }) {
                      value={vote.object2.totalVotes}
                      max={vote.maximumVote}
                   ></progress>
-                  <button onClick={() => objVoted("obj2")} className="btn-vote">
+                  <button
+                     style={{
+                        display:
+                           vote.object2.totalVotes === vote.maximumVote
+                              ? "none"
+                              : null,
+                     }}
+                     onClick={() => objVoted("obj2")}
+                     className="btn-vote"
+                  >
                      Voting
                   </button>
                </div>
