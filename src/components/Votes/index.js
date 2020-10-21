@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import Spinner from "../Spinner";
 import Vote from "./Vote";
 
 async function getAllVotes() {
@@ -11,7 +12,7 @@ export default function Votes() {
    const { data: votes, status } = useQuery("votes", getAllVotes);
 
    if (status === "loading") {
-      return <h1>Loading</h1>;
+      return <Spinner />;
    }
 
    return (

@@ -58,12 +58,12 @@
 
 .vote__title {
    color: #000000;
-   font-size: 1.2rem;
+   font-size: 1.3rem;
    font-weight: bold;
    line-height: 27px;
+   font-family: Ubuntu;
    letter-spacing: 1px;
    text-decoration: none;
-   font-family: monospace;
    text-transform: capitalize;
 }
 
@@ -73,18 +73,19 @@
 
 .vote__description {
    font-size: 1rem;
-   margin-top: 23px;
-   line-height: 23px;
+   margin-top: 20px;
+   line-height: 25px;
    margin-bottom: 28px;
+   font-family: Ubuntu;
    white-space: pre-line;
    box-sizing: border-box;
-   font-family: monospace;
 }
 
 .vote__footer {
    float: right;
    color: #413e3e;
    font-size: 1rem;
+   letter-spacing: 1px;
    font-family: monospace;
 }
 
@@ -97,6 +98,11 @@
 @media screen and (min-width: 870px) {
    .container {
       width: 60%;
+   }
+
+   .vote__description {
+      font-size: 1.1rem;
+      line-height: 28px;
    }
 }
 
