@@ -7,9 +7,10 @@ import "./css/style.css";
 
 const socket = socketIOClient("http://localhost:4000/");
 
-export default function DetailVote({ match }) {
+export default function DetailVote({ match, history }) {
    const [vote, isLoading, setVote] = useFetchVote(
-      `http://localhost:4000/api/votes/${match.params.id}`
+      `http://localhost:4000/api/votes/${match.params.id}`,
+      history
    );
 
    socket.on("voting", (data) => {
@@ -101,7 +102,7 @@ export default function DetailVote({ match }) {
    );
 }
 
-function useFetchVote(endPoint) {
+function useFetchVote(endPoint, history) {
    const CancelToken = axios.CancelToken;
    const [isLoading, setLoading] = React.useState(false);
    const [vote, setVote] = React.useState("");
@@ -121,8 +122,10 @@ function useFetchVote(endPoint) {
             });
 
             setVote(result.data);
-         } catch (error) {
-            console.log("something error", error);
+         } catch (ex) {
+            if (ex.response && ex.response.status === 404) {
+               history.push("/");
+            }
          }
 
          setLoading(false);
@@ -134,7 +137,7 @@ function useFetchVote(endPoint) {
          setVote();
          cancel();
       };
-   }, [endPoint, CancelToken]);
+   }, [endPoint, CancelToken, history]);
 
    return [vote, isLoading, setVote];
 }
