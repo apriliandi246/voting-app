@@ -1,11 +1,12 @@
 import React from "react";
+import axios from "axios";
 import { useQuery } from "react-query";
 import Spinner from "../Spinner";
 import Vote from "./Vote";
 
 async function getAllVotes() {
-   const result = await fetch("http://localhost:4000/api/votes");
-   return result.json();
+   const result = await axios("http://localhost:4000/api/votes");
+   return result.data;
 }
 
 export default function Votes() {
