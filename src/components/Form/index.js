@@ -1,14 +1,45 @@
 import React from "react";
+import axios from "axios";
 import Navbar from "../Navbar";
 import "./css/style.css";
 
-export default function Form() {
+export default function Form({ history }) {
+   const [title, setTitle] = React.useState("");
+   const [description, setDescription] = React.useState("");
+   const [obj1, setObj1] = React.useState("");
+   const [obj2, setObj2] = React.useState("");
+   const [maximumVote, setMaximumVote] = React.useState(1);
+
+   function createVote(e) {
+      e.preventDefault();
+
+      axios({
+         url: "http://localhost:4000/api/votes",
+         method: "POST",
+         data: {
+            title: title,
+            description: description,
+            maximumVote: maximumVote,
+            object1: {
+               totalVotes: 0,
+               title: obj1,
+            },
+            object2: {
+               totalVotes: 0,
+               title: obj2,
+            },
+         },
+      }).catch((err) => console.log(err));
+
+      history.push("/");
+   }
+
    return (
       <React.Fragment>
          <Navbar />
 
          <div className="form-container">
-            <form spellCheck="false" autoComplete="off">
+            <form spellCheck="false" autoComplete="off" onSubmit={createVote}>
                <div className="input-form">
                   <label htmlFor="title" className="input-form__label">
                      Title
@@ -19,6 +50,7 @@ export default function Form() {
                      id="title"
                      placeholder="title"
                      className="input-form__input"
+                     onChange={(e) => setTitle(e.target.value)}
                   />
                </div>
 
@@ -33,6 +65,7 @@ export default function Form() {
                      id="description"
                      placeholder="description"
                      className="input-form__input"
+                     onChange={(e) => setDescription(e.target.value)}
                   ></textarea>
                </div>
 
@@ -46,6 +79,7 @@ export default function Form() {
                      type="text"
                      className="input-form__input"
                      placeholder="title for object-1"
+                     onChange={(e) => setObj1(e.target.value)}
                   />
                </div>
 
@@ -59,6 +93,7 @@ export default function Form() {
                      type="text"
                      className="input-form__input"
                      placeholder="title for object-2"
+                     onChange={(e) => setObj2(e.target.value)}
                   />
                </div>
 
@@ -73,6 +108,7 @@ export default function Form() {
                      type="number"
                      placeholder="1"
                      className="input-form__input"
+                     onChange={(e) => setMaximumVote(e.target.value)}
                   />
                </div>
 
