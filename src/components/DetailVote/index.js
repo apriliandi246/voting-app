@@ -22,23 +22,15 @@ export default function DetailVote({ match, history }) {
    });
 
    function objVoted(object) {
-      const copy = { ...vote };
+      const currentVote = { ...vote };
 
       if (object === "obj1") {
-         copy.object1.totalVotes = copy.object1.totalVotes + 1;
+         currentVote.object1.totalVotes = currentVote.object1.totalVotes + 1;
       } else {
-         copy.object2.totalVotes = copy.object2.totalVotes + 1;
+         currentVote.object2.totalVotes = currentVote.object2.totalVotes + 1;
       }
 
-      socket.emit("voting", [copy, match.params.id]);
-
-      socket.on("voting", (data) => {
-         if (data._id !== match.params.id) {
-            return;
-         }
-
-         setVote(data);
-      });
+      socket.emit("voting", [currentVote, match.params.id]);
    }
 
    if (isLoading === true || vote === "") {
@@ -65,7 +57,8 @@ export default function DetailVote({ match, history }) {
                   <button
                      style={{
                         display:
-                           vote.object1.totalVotes === vote.maximumVote
+                           vote.maximumVote <= vote.object1.totalVotes ||
+                           vote.maximumVote <= vote.object2.totalVotes
                               ? "none"
                               : null,
                      }}
@@ -86,7 +79,8 @@ export default function DetailVote({ match, history }) {
                   <button
                      style={{
                         display:
-                           vote.object2.totalVotes === vote.maximumVote
+                           vote.maximumVote <= vote.object1.totalVotes ||
+                           vote.maximumVote <= vote.object2.totalVotes
                               ? "none"
                               : null,
                      }}
@@ -134,7 +128,6 @@ function useFetchVote(endPoint, history) {
       fetchData();
 
       return () => {
-         setVote();
          cancel();
       };
    }, [endPoint, CancelToken, history]);
