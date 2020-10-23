@@ -1,6 +1,6 @@
 .container {
    width: 91%;
-   margin: 115px auto 40px auto;
+   margin: 130px auto 40px auto;
 }
 
 .header {
@@ -41,6 +41,13 @@
 }
 
 /* votes */
+
+.no-votes {
+   margin-top: 100px;
+   text-align: center;
+   font-family: monospace;
+   font-size: 1.5rem;
+}
 
 .votes {
    width: 100%;
@@ -99,6 +106,10 @@
 @media screen and (min-width: 870px) {
    .container {
       width: 60%;
+   }
+
+   .no-votes {
+      margin-top: 130px;
    }
 
    .vote__description {
