@@ -4,10 +4,10 @@ import Navbar from "../Navbar";
 import "./css/style.css";
 
 export default function Form({ history }) {
-   const [title, setTitle] = React.useState("");
-   const [description, setDescription] = React.useState("");
    const [obj1, setObj1] = React.useState("");
    const [obj2, setObj2] = React.useState("");
+   const [title, setTitle] = React.useState("");
+   const [description, setDescription] = React.useState("");
    const [maximumVote, setMaximumVote] = React.useState(1);
 
    function createVote(e) {

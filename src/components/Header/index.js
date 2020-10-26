@@ -9,6 +9,9 @@ export default function Header() {
             <Link to="/new" className="header__link">
                + Add new vote
             </Link>
+            <Link to="/voted" className="header__link">
+               Or see what vote have already voted
+            </Link>
          </div>
       </React.Fragment>
    );

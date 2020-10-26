@@ -2,8 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import Spinner from "../Spinner";
-import Vote from "./Vote";
-import NoVotes from "./NoVotes";
+import Vote from "../Vote";
+import NoVotes from "../NoVotes";
 
 async function getAllVotes() {
    const result = await axios("http://localhost:4000/api/votes");
